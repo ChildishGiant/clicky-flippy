@@ -7,7 +7,7 @@
 	border-radius: 5%;
 }
 
-#orange{
+.orange{
   background: #2082D4; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#EB9B73, #D47220); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#EB9B73, #D47220); /* For Opera 11.1 to 12.0 */
@@ -15,7 +15,7 @@
   background: linear-gradient(#EB9B73, #D47220); /* Standard syntax */
 }
 
-#blue{
+.blue{
   background: #2082D4; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#72C3EA, #2082D4); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#72C3EA, #2082D4); /* For Opera 11.1 to 12.0 */
