@@ -1,6 +1,5 @@
 
 $(function() {
-
   $("body").append(makeGrid(4,4));
   randomiseTiles();
 });
@@ -11,7 +10,7 @@ function randomiseTiles(){
     //wipe classes
     $(this).removeClass();
     //add tile class again.
-    $(this).addClass("tile")
+    $(this).addClass("tile");
     //add either orange or blue
     if (Math.random() > 0.5){
       $(this).addClass("blue");
@@ -19,21 +18,18 @@ function randomiseTiles(){
       $(this).addClass("orange");
     };
   });
-
 };
 
 function toggleColour(element){
+  $(element).addClass("tile");
 
   //If the tile has the class of blue
-  if ($(element).attr('class').indexOf("blue") !== -1){
+  if ($(element).hasClass("blue") !== false){
     $(element).addClass("orange").removeClass("blue");
-
   }else{
     $(element).addClass("blue").removeClass("orange");
-
   };
-
-}
+};
 
 function invert(clicked){
   $('.tile').each(function(i) {
@@ -44,13 +40,27 @@ function invert(clicked){
   });
 };
 
-function invertRow(rowNumber){
+function invertAdjecent(clicked){
 
-  $('.tile').each(function(i) {
-    if ($(this).attr("id")[0] != rowNumber){
-        toggleColour(this);
-    };
-  });
+  var up = parseInt($(clicked).attr("id")) - 10;
+  var down = parseInt($(clicked).attr("id")) + 10;
+  var left = parseInt($(clicked).attr("id")) - 01;
+  var right = parseInt($(clicked).attr("id")) + 01;
+
+  up = up < 0 ? NaN : up;
+  down = down < 0 ? NaN : down;
+  left = left < 0 ? NaN : left;
+  right = right < 0 ? NaN : right;
+
+  up = ('0' + up).slice(-2);
+  down = ('0' + down).slice(-2);
+  left = ('0' + left).slice(-2);
+  right = ('0' + right).slice(-2);
+
+  toggleColour($("#"+up));
+  toggleColour($("#"+down));
+  toggleColour($("#"+left));
+  toggleColour($("#"+right));
 
 };
 
@@ -64,7 +74,7 @@ function makeGrid(numRows, numCols) {
 
     var row = function(r) {
         return $("<tr/>").append(numCols.times(function(c) {
-            return $("<td/>").html("<div class=\"tile\" id=\"" + r + c + "\" onclick=\"invert(this);\"></div>");
+            return $("<td/>").html("<div class=\"tile\" id=\"" + r + c + "\" onclick=\"invertAdjecent(this);\"></div>");
         }));
     };
 
