@@ -1,0 +1,28 @@
+
+.tile{
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.3);
+
+  width: 150;
+  height: 150;
+	border-radius: 5%;
+}
+
+#orange{
+  background: #2082D4; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#EB9B73, #D47220); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#EB9B73, #D47220); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#EB9B73, #D47220); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#EB9B73, #D47220); /* Standard syntax */
+}
+
+#blue{
+  background: #2082D4; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#72C3EA, #2082D4); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#72C3EA, #2082D4); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#72C3EA, #2082D4); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#72C3EA, #2082D4); /* Standard syntax */
+}
+
+th, td {
+  padding: 7px;
+}
