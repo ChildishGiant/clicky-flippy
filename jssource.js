@@ -61,6 +61,7 @@ function invertAdjecent(clicked){
   toggleColour($("#"+down));
   toggleColour($("#"+left));
   toggleColour($("#"+right));
+  toggleColour(clicked);
 
 };
 
